@@ -118,3 +118,31 @@ Thu 20 Apr 2023 05:20:17 PM UTC:
  tests:  11|6
 total_score: 15/70
 ef1dcc7
+Sat 22 Apr 2023 10:42:35 PM UTC: 
+ treemap.c | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:49:32: error: ‘return’ with a value, in function returning void [-Werror=return-type]
+   49 |   if(tree->root == NULL)return NULL;
+      |                                ^~~~
+treemap.c:47:6: note: declared here
+   47 | void insertTreeMap(TreeMap * tree, void* key, void * value) {
+      |      ^~~~~~~~~~~~~
+treemap.c:50:20: error: the comparison will always evaluate as ‘true’ for the address of ‘searchTreeMap’ will never be NULL [-Werror=address]
+   50 |   if(searchTreeMap != NULL)
+      |                    ^~
+treemap.c:53:31: error: request for member ‘current’ in something not a structure or union
+   53 |       if(tree->lower_than(free->current->pair->key, key)){
+      |                               ^~
+treemap.c:54:40: error: expected ‘)’ before ‘}’ token
+   54 |         if(tree->current->right == NULL}
+      |           ~                            ^
+treemap.c:54:40: error: expected expression before ‘}’ token
+treemap.c: At top level:
+treemap.c:58:1: error: expected identifier or ‘(’ before ‘}’ token
+   58 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+603431f
